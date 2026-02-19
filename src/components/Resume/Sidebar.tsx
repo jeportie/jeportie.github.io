@@ -8,7 +8,7 @@ import { ContactItem } from './ContactItem'
 import { SkillCategory } from './SkillCategory'
 import { TechBadge } from './TechBadge'
 
-const PHOTO_ANIMATION_DURATION = 0.8
+const PHOTO_ANIMATION_DURATION = 1.5
 
 function SidebarPhoto({ photo, name, emoji }: { photo: string; name: string; emoji?: string }) {
   const [isSpinning, setIsSpinning] = useState(false)
@@ -30,7 +30,7 @@ function SidebarPhoto({ photo, name, emoji }: { photo: string; name: string; emo
     return (
       <div className="flex justify-center mb-6">
         <div className="w-32 h-32 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg">
-          <span className="text-4xl">{emoji || '👨‍💻'}</span>
+          <span className="text-4xl">{emoji || ' '}</span>
         </div>
       </div>
     )
@@ -44,7 +44,7 @@ function SidebarPhoto({ photo, name, emoji }: { photo: string; name: string; emo
         onAnimationComplete={() => setIsSpinning(false)}
         animate={{ rotateY: isSpinning ? 360 : 0 }}
         transition={{ duration: PHOTO_ANIMATION_DURATION, ease: 'easeInOut' }}
-        className="relative w-32 h-32 cursor-pointer"
+        className="relative w-64 h-64 cursor-pointer"
         style={{ transformStyle: 'preserve-3d' }}
         role="button"
         tabIndex={0}
@@ -66,7 +66,7 @@ function SidebarPhoto({ photo, name, emoji }: { photo: string; name: string; emo
           className="absolute inset-0 rounded-full border-4 border-resume-bg/30 shadow-lg bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
-          <span className="text-4xl">{emoji || '👨‍💻'}</span>
+          <span className="text-4xl">{emoji || ' '}</span>
         </div>
       </motion.div>
     </div>
@@ -75,7 +75,7 @@ function SidebarPhoto({ photo, name, emoji }: { photo: string; name: string; emo
 
 export function Sidebar() {
   const { resolve } = useTranslation()
-  const { personal, contact, skills, hobbies, labels } = resumeConfig
+  const { personal, aboutme, contact, skills, hobbies, labels } = resumeConfig
 
   return (
     <div className="md:w-[38%] bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to p-8">
@@ -96,6 +96,18 @@ export function Sidebar() {
           ))}
         </div>
       </SidebarSection>
+
+      {/* About Me */}
+      <SidebarSection title={resolve(labels.sections.aboutme)}>
+        <div className="space-y-3">
+          {resolve(aboutme.description).split('\n\n').map((paragraph, i) => (
+            <p key={i} className="text-sm text-resume-text-secondary leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </SidebarSection>
+
 
       {/* Skills */}
       <SidebarSection title={resolve(labels.sections.skills)}>
@@ -156,6 +168,8 @@ export function Sidebar() {
           </div>
         </SidebarSection>
       )}
+
+
     </div>
   )
 }

@@ -45,6 +45,7 @@ export const resumeConfig: ResumeConfig = {
       items: [
         { name: 'TypeScript' },
         { name: 'JavaScript' },
+        { name: 'Python' },
         { name: 'C' },
         { name: 'C++' },
         { name: 'Bash' },
@@ -67,8 +68,10 @@ export const resumeConfig: ResumeConfig = {
       type: 'badges',
       items: [
         { name: 'React' },
+        { name: 'React Router' },
         { name: 'TanStack Query' },
         { name: 'TailwindCSS' },
+        { name: 'Vite' },
       ],
     },
     {
@@ -261,6 +264,20 @@ export const resumeConfig: ResumeConfig = {
     },
   ],
 
+  aboutme: {
+    description: {
+      en: `Final-year Software Engineering student at École 42, transitioning from audio engineering with a strong systems mindset.\n
+Interested in Web Engineering, QA Automation, DevOps/Cloud, Embedded Systems and Data, I am driven by reliability, security and performance in environments where engineering rigor directly impacts product quality.\n
+Currently seeking an internship to contribute to impactful, scalable systems.`,
+
+      fr: `Étudiant en dernière année à l’École 42, en reconversion depuis l’ingénierie audio, avec une forte approche orientée systèmes.\n
+Intéressé par le développement web, la QA automation, le DevOps/Cloud, les systèmes embarqués et la data, je suis motivé par les environnements où fiabilité, sécurité et performance sont essentielles.\n
+Actuellement à la recherche d’un stage pour contribuer à des systèmes robustes et scalables.`,
+    }
+  },
+
+
+
   hobbies: [
     { title: { en: 'DJing', fr: 'DJ' } },
     { title: { en: 'Basketball', fr: 'Basket' } },
@@ -273,7 +290,7 @@ export const resumeConfig: ResumeConfig = {
   // or a LocalizedString for one PDF per language (button is hidden if no PDF for the current language).
   pdf: {
     label: { en: 'Download PDF', fr: 'Télécharger le PDF' },
-    path: { en: '/cv/resume-en.pdf', fr: '/cv/resume-fr.pdf' },
+    path: { en: '/cv/Jerome_Portier_CV_EN.pdf', fr: '/cv/Jerome_Portier_CV_FR.pdf' },
   },
 
   theme: {
@@ -282,6 +299,7 @@ export const resumeConfig: ResumeConfig = {
 
   labels: {
     sections: {
+      aboutme: { en: 'ABOUT ME', fr: 'A PROPOS DE MOI' },
       contact: { en: 'CONTACT', fr: 'CONTACT' },
       skills: { en: 'SKILLS', fr: 'COMPÉTENCES' },
       experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCE PROFESSIONNELLE' },

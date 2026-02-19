@@ -109,6 +109,7 @@ export type PresetName = 'minimal' | 'warm' | 'ocean' | 'forest' | 'slate' | 'li
 
 export interface ResumeLabels {
   sections: {
+    aboutme: LocalizedString
     contact: LocalizedString
     skills: LocalizedString
     experience: LocalizedString
@@ -156,6 +157,9 @@ export interface ResumeConfig {
   education: Education[]
   projects?: Project[]
   hobbies?: Hobby[]
+  aboutme: {
+    description: LocalizedString
+  }
   pdf?: {
     label?: LocalizedString
     /** Single path for all languages, or one path per language (hides button if no PDF for current language) */

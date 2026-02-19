@@ -296,6 +296,14 @@ export const resumeConfig: ResumeConfig = {
     },
   ],
 
+  // ===== ABOUT ME =====
+  aboutme: {
+    description: {
+      en: 'Write a short bio about yourself here. This section supports multiple paragraphs — separate them with a blank line.\n\nDescribe your background, skills, and what you are looking for.',
+      fr: 'Écrivez une courte biographie ici. Cette section supporte plusieurs paragraphes — séparez-les par une ligne vide.\n\nDécrivez votre parcours, vos compétences et ce que vous recherchez.',
+    },
+  },
+
   // ===== HOBBIES (optional) =====
   hobbies: [
     {
@@ -343,6 +351,7 @@ export const resumeConfig: ResumeConfig = {
   // ===== UI LABELS =====
   labels: {
     sections: {
+      aboutme: { en: 'ABOUT ME', fr: 'À PROPOS DE MOI' },
       contact: { en: 'CONTACT', fr: 'CONTACT' },
       skills: { en: 'SKILLS', fr: 'COMPÉTENCES' },
       experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCES PROFESSIONNELLES' },
